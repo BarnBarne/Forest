@@ -1,0 +1,863 @@
+@use 'utilities/colors' as *;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+.title {
+	font-weight: 200;
+	font-size: 4rem;
+	text-align: center;
+	padding: 0.5em 0 1em;
+}
+
+.subpageTitle {
+	padding-top: 2em;
+}
+
+//MOBILE NAV
+
+.mobileNav {
+	position: fixed;
+	z-index: 10;
+
+	// &__brand {
+	// 	position: absolute;
+	// 	top: 10px;
+	// 	left: 50vh;
+	// 	transform: translateX(-50%);
+	// }
+
+	&__button {
+		position: fixed;
+		top: px;
+		right: 0;
+		padding: 0.5em 1em;
+		font-size: 3.6rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		transition: transform 0.3s;
+		color: #fff;
+		z-index: 1000;
+
+		i {
+			color: $main-color;
+		}
+	}
+
+	&__items {
+		position: fixed;
+		display: flex;
+		overflow: hidden;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+		left: -100%;
+		list-style: none;
+		transition: transform 0.3s;
+		background-color: $footerBackground-color;
+		z-index: 100;
+	}
+
+	&__item {
+		margin: 2em;
+
+		a {
+			text-decoration: none;
+			color: $main-color;
+			font-size: 3.6rem;
+			padding: 0.5em 1em;
+		}
+	}
+
+	.active {
+		transform: translateX(100%);
+	}
+
+	.hide {
+		display: none;
+	}
+}
+
+.nav {
+	display: none;
+}
+
+// HEADER
+
+.header {
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/headerBig.jpg');
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	text-align: flex-start;
+	justify-content: center;
+	padding: 2em;
+
+	&__brand {
+		font-size: 2rem;
+	}
+
+	&__title {
+		font-size: 3rem;
+	}
+
+	.fa-chevron-down {
+		position: absolute;
+		left: 50%;
+		bottom: 20px;
+		transform: translateX(-50%);
+		color: $secondary-color;
+		font-size: 3rem;
+	}
+}
+
+// ABOUTUS
+
+.aboutus {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 5.6em 3.2em;
+
+	&__title {
+		margin-bottom: 1em;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		//padding: 1em 0;
+		//margin-bottom: 1em;
+	}
+
+	&__img {
+		background-image: url('../img/aboutusBig.jpg');
+		background-size: cover;
+		background-position: center;
+		height: 200px;
+		width: 100%;
+		margin-bottom: 2em;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		//padding: 2em 1em;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.35rem;
+		text-align: start;
+
+		h2 {
+			//font-size: 1.4rem;
+			width: 100%;
+			margin-bottom: 1em;
+		}
+	}
+}
+
+//ADVENTURE
+
+.adventure {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/adventureBig.jpg');
+	background-size: 200%;
+	background-position: center;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__box {
+		padding: 1.5em;
+		border-top: 1px solid $secondary-color;
+		border-bottom: 1px solid $secondary-color;
+		text-align: center;
+	}
+
+	&__text {
+		color: $secondary-color;
+		font-size: 2rem;
+	}
+}
+
+//OFFER
+
+.offers {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 5.6em 3.2em;
+
+	
+	&__text {
+		margin-bottom: 1.2em;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	&__cards {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 4em;
+		margin-bottom: 1.5em;
+		box-shadow: 0px 2px 5px $footer-color;
+		border: 0.1em solid $footerBackground-color;
+		border-radius: 0.4em;
+
+		&-title {
+			font-size: 2.5rem;
+			margin-bottom: 0.6em;
+			font-weight: normal;
+		}
+
+		&-price {
+			font-size: 3.5rem;
+			font-weight: bold;
+			margin-bottom: 0.5em;
+		}
+
+		&-options {
+			list-style: none;
+			margin-bottom: 1em;
+			font-size: 1.5rem;
+		}
+
+		&-option {
+			margin-bottom: 0.2em;
+		}
+
+		.fa-solid {
+			font-size: 1rem;
+		}
+
+		.fa-check {
+			color: $green-color;
+		}
+
+		&-button {
+			font-family: 'Raleway', sans-serif;
+			padding: 0.5em 4em;
+			background-color: $secondary-color;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0px 2px 5px $footer-color;
+			cursor: pointer;
+			transition: transform 0.3s, background-color 0.3s;
+
+			&:hover {
+				background-color: $footerBackground-color;
+			}
+		}
+
+		.highlight {
+			background-color: $green-color;
+			font-weight: bold;
+
+			&:hover {
+				background-color: $greenHover-color;
+			}
+		}
+	}
+
+	&__more {
+		font-size: 2.2rem;
+		color: $main-color;
+		text-decoration: none;
+		align-self: flex-end;
+		margin-top: 0.8em;
+		padding: 1em 0;
+
+		.fa-chevron-right {
+			color: $green-color;
+		}
+	}
+}
+
+//FOOTER
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $footerBackground-color;
+
+	.wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 5.6em 3.2em 0 3em;
+		border-bottom: 1px solid $main-color;
+	}
+
+	&__brand {
+		font-size: 3rem;
+		margin-bottom: 1.5em;
+	}
+
+	&__box-title {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	&__item {
+		list-style: none;
+		font-size: 1.4rem;
+		padding: 1em 0;
+
+		&:last-child {
+			margin-bottom: 1em;
+		}
+		a {
+			text-decoration: none;
+			color: $footer-color;
+		}
+	}
+
+	&__copyright {
+		font-size: 1.5rem;
+		margin: 1.5em 0;
+		color: $footer-color;
+	}
+}
+
+// KONTAKT
+
+.contact__form {
+	padding: 0 2em 6em;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.6rem;
+
+	&-box {
+		label {
+			text-transform: uppercase;
+			margin-bottom: 0.5em;
+		}
+
+		margin: 0 0.2em 2em;
+		display: flex;
+		flex-direction: column;
+		input,
+		textarea {
+			padding: 0.6em 1.2em;
+			border: solid 1px $footer-color;
+			font-size: 1.6rem;
+			border-radius: 8px;
+		}
+
+		textarea {
+			min-height: 150px;
+			resize: vertical;
+		}
+	}
+
+	&-btn {
+		padding: 1em 2em;
+		background-color: $green-color;
+		border-radius: 8px;
+		border: none;
+		color: $secondary-color;
+		font-size: 1.4rem;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.googleMap {
+	
+}
+iframe {
+	z-index: -1;
+	width: 100%;
+}
+
+.next,
+.prev {
+	display: none;
+}
+
+// MEDIA
+@media (min-width: 768px) {
+	.header {
+		&__brand {
+			font-size: 4rem;
+		}
+
+		&__title {
+			font-size: 6rem;
+		}
+	}
+
+	.mobileNav {
+		&__item {
+			a {
+				font-size: 5rem;
+			}
+		}
+	}
+
+	.aboutus {
+		&__img {
+			height: 300px;
+		}
+
+		&__text {
+			font-size: 2rem;
+		}
+	}
+
+	.adventure {
+		height: 300px;
+
+		&__box {
+			padding: 2em 10em;
+			border: 1px solid $secondary-color;
+		}
+
+		&__text {
+			font-size: 3rem;
+		}
+	}
+
+	.offers {
+		&__cards {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			margin: 1.5em;
+		}
+	}
+
+	.footer {
+		.wrapper {
+			flex-direction: row;
+			align-items: center;
+			border-bottom: 1px solid $main-color;
+		}
+
+		&__brand {
+			font-size: 4rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	//	NAV
+
+	.mobileNav {
+		display: none;
+	}
+
+	.nav {
+		position: fixed;
+		display: flex;
+		width: 100%;
+		top: 0;
+		justify-content: space-around;
+		align-items: center;
+		background-color: $secondary-color;
+		z-index: 1000;
+
+		.active {
+			background-color: $main-color;
+			color: $secondary-color;
+		}
+
+		&__items {
+			display: flex;
+			padding: 0 2em;
+		}
+
+		&__item {
+			font-size: 1.6rem;
+			padding: 1.6em 1.2em;
+			color: $main-color;
+			background-color: $secondary-color;
+			text-decoration: none;
+			transition: background-color 0.3s, color 0.3s;
+
+			&:hover {
+				color: $secondary-color;
+				background-color: $main-color;
+			}
+		}
+
+		&__brand {
+			color: $main-color;
+			text-decoration: none;
+			font-size: 3rem;
+			i {
+				color: $footer-color;
+			}
+		}
+	}
+
+	.header {
+		height: 450px;
+
+		padding-left: 15em;
+		&__brand {
+			font-size: 2.2rem;
+		}
+
+		&__title {
+			font-size: 3.4rem;
+		}
+
+		.fa-chevron-down {
+			display: none;
+		}
+	}
+
+	.aboutus {
+		padding: 5.6em 10em;
+
+		&__box {
+			flex-direction: row;
+			align-items: start;
+			justify-content: space-around;
+		}
+
+		&__img {
+			background-image: url('../img/aboutusBig.jpg');
+			background-size: cover;
+			background-position: center;
+			height: 200px;
+			width: 40%;
+			margin-bottom: 2em;
+		}
+
+		&__text {
+			width: 40%;
+			font-size: 1.5rem;
+			line-height: 1.4em;
+
+			h2 {
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+
+	.adventure {
+		height: 300px;
+
+		&__box {
+			padding: 2em 10em;
+		}
+
+		&__text {
+			font-size: 3.5rem;
+		}
+	}
+
+	.footer {
+		.wrapper {
+			flex-direction: row;
+			align-items: start;
+		}
+
+		&__items {
+			display: flex;
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			margin-right: 3em;
+		}
+
+		&__item {
+			list-style: none;
+			font-size: 1.4rem;
+			//padding: .8em;
+		}
+
+		&__copyright {
+			font-size: 1.5rem;
+			margin: 1.5em 0;
+			color: $footer-color;
+		}
+	}
+
+	.contact__form {
+		font-size: 2rem;
+
+		&-box {
+			input,
+			textarea {
+				font-size: 2rem;
+			}
+		}
+
+		&-btn {
+			font-size: 1.8rem;
+			width: 25%;
+			align-self: flex-end;
+		}
+	}
+
+	//OFFERSSITE
+
+	//CAROUSEL-nav
+	.carousel-nav {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)),
+			url(https://cdn.pixabay.com/photo/2017/04/21/17/29/wood-2249363_1280.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+	.carousel-btn {
+		font-size: 5rem;
+		color: $green-color;
+		cursor: pointer;
+
+		&:hover {
+			color: $greenHover-color;
+		}
+	}
+	.prev {
+		margin-left: 5rem;
+	}
+	.next {
+		margin-right: 5rem;
+	}
+
+	.offersSite {
+		display: block;
+		margin: 0 auto;
+		width: 80%;
+
+		.offers__card {
+			scale: 0.6;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			overflow: hidden;
+			border-radius: 0 70%;
+			background-color: $green-color;
+
+			box-shadow: 0px 2px 5px $footer-color;
+			border: 0;
+
+			&:nth-child(odd) {
+				margin-top: 15rem;
+			}
+
+			&-title {
+				font-size: 2.6rem;
+				padding-right: 2em;
+				margin-bottom: 0.6em;
+				font-weight: normal;
+			}
+
+			&-price {
+				font-size: 3.5rem;
+				font-weight: bold;
+				margin-bottom: 0.5em;
+			}
+
+			&-options {
+				list-style: none;
+				margin-bottom: 1em;
+				font-size: 1.5rem;
+			}
+
+			&-option {
+				margin-bottom: 0.2em;
+			}
+
+			.fa-solid {
+				font-size: 1rem;
+			}
+
+			.fa-check {
+				color: $darkgreen-color;
+			}
+
+			&-button {
+				padding: 0.5em 2em;
+				background-color: transparent;
+				box-shadow: 0px 2px 5px black;
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.highlighted-card {
+			background-color: $highlighted-leaf;
+
+			.offers__card-button:hover {
+				background-color: $highlighted-leaf;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	//OFFERSSITE
+
+	//CAROUSEL-nav
+
+	.offersSite {
+		margin-bottom: 1em;
+		.offers__card {
+			&-title {
+				font-size: 3rem;
+			}
+
+			&-price {
+				font-size: 3.8rem;
+			}
+
+			&-options {
+				margin-left: 1em;
+				font-size: 2rem;
+			}
+
+			&-option {
+				margin-bottom: 0.3em;
+			}
+
+			.fa-solid {
+				font-size: 2rem;
+			}
+
+			&-button {
+				margin-left: 2em;
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.nav {
+		&__item {
+			font-size: 2rem;
+		}
+
+		&__brand {
+			font-size: 4rem;
+		}
+	}
+
+	.header {
+		height: 550px;
+
+		padding-left: 30em;
+		&__brand {
+			font-size: 2.4rem;
+		}
+
+		&__title {
+			font-size: 4rem;
+		}
+	}
+
+	.aboutus {
+		padding: 5.6em 15em;
+
+		&__img {
+			height: 400px;
+		}
+
+		&__text {
+			width: 40%;
+			font-size: 2.4rem;
+			line-height: 2em;
+
+			h2 {
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+
+	.adventure {
+		height: 400px;
+
+		&__box {
+			padding: 3em 25em;
+		}
+
+		&__text {
+			font-size: 4rem;
+		}
+	}
+
+	//OFFERSSITE
+
+	//CAROUSEL-nav
+
+	.carousel-btn {
+		font-size: 5rem;
+		color: #7cc44c;
+		cursor: pointer;
+
+		&:hover {
+			color: #66a13f;
+		}
+	}
+
+	.offersSite {
+		width: 82%;
+
+		.offers__card {
+			&-title {
+				font-size: 3.2rem;
+			}
+
+			&-price {
+				font-size: 4rem;
+			}
+		}
+	}
+}
+
+.scrollLock {
+	height: 100%;
+	overflow: hidden;
+}
