@@ -33,13 +33,6 @@ body {
 	position: fixed;
 	z-index: 10;
 
-	// &__brand {
-	// 	position: absolute;
-	// 	top: 10px;
-	// 	left: 50vh;
-	// 	transform: translateX(-50%);
-	// }
-
 	&__button {
 		position: fixed;
 		top: px;
@@ -164,14 +157,12 @@ body {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		//padding: 2em 1em;
 		align-items: center;
 		justify-content: center;
 		font-size: 1.35rem;
 		text-align: start;
 
 		h2 {
-			//font-size: 1.4rem;
 			width: 100%;
 			margin-bottom: 1em;
 		}
@@ -676,7 +667,6 @@ iframe {
 		&__item {
 			list-style: none;
 			font-size: 1.4rem;
-			//padding: .8em;
 		}
 
 		&__copyright {

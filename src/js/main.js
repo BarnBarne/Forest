@@ -11,7 +11,6 @@ const url = window.location.pathname
 //mobileNav
 const handleNav = () => {
 	mobileNav.classList.toggle('active')
-	//burgerButton.classList.toggle('active')
 	barsIcon.classList.toggle('hide')
 	xIcon.classList.toggle('hide')
 
