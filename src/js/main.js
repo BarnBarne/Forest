@@ -45,28 +45,4 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => {
 	observer.observe(section)
-	console.log(section)
 })
-
-// const sections = document.querySelectorAll('.section') //pobranie wszystkich sekcji
-
-// // intersection observer api  ASYNCHRONICZNIE OBSERWUJE ZMIANY
-// const observer = new IntersectionObserver(
-// 	entries => {								// pobiera array jako entries
-// 		entries.forEach(entry => {
-// 			const id = entry.target.id
-// 			const navItem = document.querySelector(`.nav__item[href='#${id}']`)		//wyszukanie elementu nawigacji po id
-// 			 //(entry.isIntersecting) ? navItem.classList.add('active') : navItem.classList.remove('active');
-// 			 navItem.classList.toggle("active", entry.isIntersecting)			//krótszy zapis, toggle jako boolean
-// 		})
-// 	},
-// 	{			//opcje
-// 		//root 		domyślnie przeglądarka, musi być rodzic obserwowanego elementu
-// 		rootMargin: "-5% 0% -95% 0%"	//margines jak w css zwiększa lub zmniejsza strony elementu przed spr intersekcji
-// 		//threshold		od 0 do 1, w % ile elementu musi być widoczne żeby zaliczać do isIntersecting
-// 	}
-// )
-
-// sections.forEach(section => {
-// 	observer.observe(section)
-// })
