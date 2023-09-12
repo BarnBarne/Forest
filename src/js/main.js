@@ -13,7 +13,6 @@ const handleNav = () => {
 	mobileNav.classList.toggle('active')
 	barsIcon.classList.toggle('hide')
 	xIcon.classList.toggle('hide')
-
 	body.classList.toggle('scrollLock')
 }
 

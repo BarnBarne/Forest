@@ -17,7 +17,5 @@ const test = () => {
 	})
 }
 
-
-
 document.addEventListener('DOMContentLoaded', test)
 window.addEventListener('resize', test)

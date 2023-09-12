@@ -9,7 +9,6 @@ const shadow = document.querySelector('.popup-shadow')
 const showError = (input, msg) => {
 	const formBox = input.parentElement
 	const errorMsg = formBox.querySelector('.errorMsg')
-
 	formBox.classList.add('error')
 	errorMsg.textContent = msg
 }
@@ -38,8 +37,6 @@ const checkLength = (input, min) => {
 const checkMail = mail => {
 	const re =
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-	const re2 = /^(?![_. '])(?!.*[_. ']{2})[a-zA-Z0-9/sąćężźłóń']+(?<![_. '])$/
 	if (re.test(mail.value)) {
 		clearError(mail)
 	} else {
@@ -58,7 +55,6 @@ const checkInput = input => {
 
 const checkErrors = input => {
 	let errorCount = 0
-
 	input.forEach(el => {
 		if (el.parentElement.classList.contains('error')) {
 			errorCount++

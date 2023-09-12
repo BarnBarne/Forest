@@ -12,15 +12,17 @@ html {
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
 	position: relative;
+	font-family: 'Raleway', sans-serif;
 }
 
+//TITLE
+
 .title {
-	font-weight: 200;
-	font-size: 4rem;
-	text-align: center;
 	padding: 0.5em 0 1em;
+	font-size: 4rem;
+	font-weight: 200;
+	text-align: center;
 }
 
 .subpageTitle {
@@ -35,16 +37,15 @@ body {
 
 	&__button {
 		position: fixed;
-		top: px;
 		right: 0;
 		padding: 0.5em 1em;
 		font-size: 3.6rem;
-		background: none;
-		border: none;
-		cursor: pointer;
-		transition: transform 0.3s;
 		color: #fff;
+		border: none;
+		background: none;
 		z-index: 1000;
+		transition: transform 0.3s;
+		cursor: pointer;
 
 		i {
 			color: $main-color;
@@ -53,28 +54,28 @@ body {
 
 	&__items {
 		position: fixed;
+		left: -100%;
 		display: flex;
-		overflow: hidden;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		overflow: hidden;
 		height: 100%;
 		width: 100%;
-		left: -100%;
 		list-style: none;
-		transition: transform 0.3s;
 		background-color: $footerBackground-color;
 		z-index: 100;
+		transition: transform 0.3s;
 	}
 
 	&__item {
 		margin: 2em;
 
 		a {
+			padding: 0.5em 1em;
+			font-size: 3.6rem;
 			text-decoration: none;
 			color: $main-color;
-			font-size: 3.6rem;
-			padding: 0.5em 1em;
 		}
 	}
 
@@ -96,15 +97,15 @@ body {
 .header {
 	position: relative;
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/headerSmall.jpg');
+	padding: 2em;
 	height: 100vh;
+	text-align: flex-start;
+	color: white;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/headerSmall.jpg');
 	background-size: cover;
 	background-position: center;
-	color: white;
-	text-align: flex-start;
-	justify-content: center;
-	padding: 2em;
 
 	&__brand {
 		font-size: 2rem;
@@ -119,8 +120,8 @@ body {
 		left: 50%;
 		bottom: 20px;
 		transform: translateX(-50%);
-		color: $secondary-color;
 		font-size: 3rem;
+		color: $secondary-color;
 	}
 }
 
@@ -128,9 +129,9 @@ body {
 
 .aboutus {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	padding: 5.6em 3.2em;
 
 	&__title {
@@ -139,32 +140,32 @@ body {
 
 	&__box {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 
 	&__img {
+		margin-bottom: 2em;
+		width: 100%;
+		height: 200px;
 		background-image: url('../img/aboutusSmall.jpg');
 		background-size: cover;
 		background-position: center;
-		height: 200px;
-		width: 100%;
-		margin-bottom: 2em;
 	}
 
 	&__text {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-direction: column;
 		width: 100%;
-		align-items: center;
-		justify-content: center;
 		font-size: 1.35rem;
 		text-align: start;
 
 		h2 {
-			width: 100%;
 			margin-bottom: 1em;
+			width: 100%;
 		}
 	}
 }
@@ -172,24 +173,24 @@ body {
 //ADVENTURE
 
 .adventure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/adventureSmall.jpg');
 	background-size: 200%;
 	background-position: center;
-	height: 200px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
 	&__box {
 		padding: 1.5em;
+		text-align: center;
 		border-top: 1px solid $secondary-color;
 		border-bottom: 1px solid $secondary-color;
-		text-align: center;
 	}
 
 	&__text {
-		color: $secondary-color;
 		font-size: 2rem;
+		color: $secondary-color;
 	}
 }
 
@@ -197,9 +198,9 @@ body {
 
 .offers {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	padding: 5.6em 3.2em;
 
 	&__text {
@@ -210,37 +211,37 @@ body {
 
 	&__cards {
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
 	}
 
 	&__card {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		padding: 4em;
+		flex-direction: column;
 		margin-bottom: 1.5em;
+		padding: 4em;
 		box-shadow: 0px 2px 5px $footer-color;
-		border: 0.1em solid $footerBackground-color;
-		border-radius: 0.4em;
+		border: 1px solid $footerBackground-color;
+		border-radius: 4px;
 
 		&-title {
-			font-size: 2.5rem;
 			margin-bottom: 0.6em;
+			font-size: 2.5rem;
 			font-weight: normal;
 		}
 
 		&-price {
+			margin-bottom: 0.5em;
 			font-size: 3.5rem;
 			font-weight: bold;
-			margin-bottom: 0.5em;
 		}
 
 		&-options {
-			list-style: none;
 			margin-bottom: 1em;
 			font-size: 1.5rem;
+			list-style: none;
 		}
 
 		&-option {
@@ -256,15 +257,15 @@ body {
 		}
 
 		&-button {
-			font-family: 'Raleway', sans-serif;
 			padding: 0.5em 4em;
-			background-color: $secondary-color;
-			border: none;
-			border-radius: 0.5em;
+			font-family: 'Raleway', sans-serif;
 			font-weight: 700;
+			background-color: $secondary-color;
 			box-shadow: 0px 2px 5px $footer-color;
-			cursor: pointer;
+			border: none;
+			border-radius: 5px;
 			transition: transform 0.3s, background-color 0.3s;
+			cursor: pointer;
 
 			&:hover {
 				background-color: $footerBackground-color;
@@ -281,12 +282,12 @@ body {
 	}
 
 	&__more {
-		font-size: 2.2rem;
-		color: $main-color;
-		text-decoration: none;
 		align-self: flex-end;
 		margin-top: 0.8em;
 		padding: 1em 0;
+		font-size: 2.2rem;
+		text-decoration: none;
+		color: $main-color;
 
 		.ti-chevron-right {
 			color: $green-color;
@@ -298,34 +299,34 @@ body {
 
 .footer {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	background-color: $footerBackground-color;
 
 	.wrapper {
-		width: 100%;
 		display: flex;
-		flex-direction: column;
 		justify-content: space-around;
+		flex-direction: column;
 		padding: 5.6em 3.2em 0 3em;
+		width: 100%;
 		border-bottom: 1px solid $main-color;
 	}
 
 	&__brand {
-		font-size: 3rem;
 		margin-bottom: 1.5em;
+		font-size: 3rem;
 	}
 
 	&__box-title {
+		margin-bottom: 1em;
 		font-size: 2rem;
-		margin-bottom: 1rem;
 	}
 
 	&__item {
-		list-style: none;
-		font-size: 1.4rem;
 		padding: 1em 0;
+		font-size: 1.4rem;
+		list-style: none;
 
 		&:last-child {
 			margin-bottom: 1em;
@@ -337,8 +338,8 @@ body {
 	}
 
 	&__copyright {
-		font-size: 1.5rem;
 		margin: 1.5em 0;
+		font-size: 1.5rem;
 		color: $footer-color;
 	}
 }
@@ -346,16 +347,16 @@ body {
 // CONTACT
 
 .contactForm {
-	padding: 0 2em 6em;
-	margin: 0 auto;
+	position: relative;
 	display: flex;
 	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 2em 6em;
 	font-size: 1.6rem;
-	position: relative;
 	&__box {
-		margin: 0 0.2em 0.5em;
 		display: flex;
 		flex-direction: column;
+		margin: 0 0.2em 0.5em;
 
 		label {
 			margin-bottom: 0.5em;
@@ -365,9 +366,9 @@ body {
 		input,
 		textarea {
 			padding: 0.6em 1.2em;
-			border: solid 1px $footer-color;
 			font-size: 1.6rem;
-			border-radius: 0.8em;
+			border: solid 1px $footer-color;
+			border-radius: 8px;
 		}
 
 		textarea {
@@ -376,9 +377,9 @@ body {
 		}
 
 		.errorMsg {
+			visibility: hidden;
 			padding-left: 1em;
 			color: $error-color;
-			visibility: hidden;
 		}
 
 		&.error {
@@ -394,11 +395,11 @@ body {
 
 	&-btn {
 		padding: 1em 2em;
-		background-color: $green-color;
-		border-radius: 0.8em;
-		border: none;
-		color: $secondary-color;
 		font-size: 1.4rem;
+		color: $secondary-color;
+		background-color: $green-color;
+		border: none;
+		border-radius: 8px;
 
 		&:hover {
 			cursor: pointer;
@@ -406,21 +407,21 @@ body {
 	}
 
 	&__popup {
+		position: absolute;
+		top: -300em;
+		left: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		position: absolute;
-		top: -30em;
-		left: 50%;
 		transform: translate(-50%, -50%);
+		padding: 1em;
 		width: 85%;
-		padding: 1rem;
 		background-color: #fff;
-		border-radius: 0.8em;
-		border: 0.2em solid $main-color;
-		transition: top 0.5s;
+		border: 2px solid $main-color;
+		border-radius: 8px;
 		z-index: 10;
+		transition: top 0.5s;
 
 		&-message {
 			font-size: 1.4rem;
@@ -436,12 +437,12 @@ body {
 }
 
 .popup-shadow {
+	display: none;
 	position: absolute;
 	top: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.65);
-	display: none;
 
 	&.show-shadow {
 		display: block;
@@ -449,14 +450,16 @@ body {
 }
 
 iframe {
-	z-index: -1;
 	width: 100%;
+	z-index: -1;
 }
 
 // CAROUSEL
 .next,
 .prev {
 	display: none;
+	font-size: 6rem;
+	color: $green-color;
 }
 
 // MEDIA
@@ -515,8 +518,8 @@ iframe {
 
 	.footer {
 		.wrapper {
-			flex-direction: row;
 			align-items: center;
+			flex-direction: row;
 			border-bottom: 1px solid $main-color;
 		}
 
@@ -529,8 +532,8 @@ iframe {
 
 	.contactForm {
 		&__popup {
-			width: auto;
 			padding: 1em 2.5em;
+			width: auto;
 			&-message {
 				font-size: 2rem;
 			}
@@ -539,7 +542,7 @@ iframe {
 }
 
 @media (min-width: 992px) {
-	//	NAV
+	//NAV
 
 	.mobileNav {
 		display: none;
@@ -547,17 +550,17 @@ iframe {
 
 	.nav {
 		position: fixed;
-		display: flex;
-		width: 100%;
 		top: 0;
-		justify-content: space-around;
+		display: flex;
 		align-items: center;
+		justify-content: space-around;
+		width: 100%;
 		background-color: $secondary-color;
 		z-index: 1000;
 
 		.active {
-			background-color: $main-color;
 			color: $secondary-color;
+			background-color: $main-color;
 		}
 
 		&__items {
@@ -566,11 +569,11 @@ iframe {
 		}
 
 		&__item {
-			font-size: 1.6rem;
 			padding: 1.6em 1.2em;
+			font-size: 1.6rem;
+			text-decoration: none;
 			color: $main-color;
 			background-color: $secondary-color;
-			text-decoration: none;
 			transition: background-color 0.3s, color 0.3s;
 
 			&:hover {
@@ -580,9 +583,9 @@ iframe {
 		}
 
 		&__brand {
-			color: $main-color;
-			text-decoration: none;
 			font-size: 3rem;
+			text-decoration: none;
+			color: $main-color;
 			i {
 				color: $footer-color;
 			}
@@ -611,18 +614,18 @@ iframe {
 		padding: 5.6em 10em;
 
 		&__box {
-			flex-direction: row;
-			align-items: start;
 			justify-content: space-around;
+			align-items: start;
+			flex-direction: row;
 		}
 
 		&__img {
+			width: 40%;
+			height: 200px;
+			margin-bottom: 2em;
 			background-image: url('../img/aboutusBig.jpg');
 			background-size: cover;
 			background-position: center;
-			height: 200px;
-			width: 40%;
-			margin-bottom: 2em;
 		}
 
 		&__text {
@@ -651,8 +654,8 @@ iframe {
 
 	.footer {
 		.wrapper {
-			flex-direction: row;
 			align-items: start;
+			flex-direction: row;
 		}
 
 		&__items {
@@ -661,19 +664,19 @@ iframe {
 
 		&__box {
 			display: flex;
-			flex-direction: column;
 			align-items: start;
+			flex-direction: column;
 			margin-right: 3em;
 		}
 
 		&__item {
-			list-style: none;
 			font-size: 1.4rem;
+			list-style: none;
 		}
 
 		&__copyright {
-			font-size: 1.5rem;
 			margin: 1.5em 0;
+			font-size: 1.5rem;
 			color: $footer-color;
 		}
 	}
@@ -691,9 +694,9 @@ iframe {
 		}
 
 		&-btn {
-			font-size: 1.8rem;
-			width: 25%;
 			align-self: flex-end;
+			width: 25%;
+			font-size: 1.8rem;
 		}
 
 		&__popup {
@@ -726,10 +729,10 @@ iframe {
 		}
 	}
 	.prev {
-		margin-left: 5rem;
+		margin-left: 1.5em;
 	}
 	.next {
-		margin-right: 5rem;
+		margin-right: 1.5em;
 	}
 
 	.offersSite {
@@ -738,39 +741,39 @@ iframe {
 		width: 80%;
 
 		.offers__card {
-			scale: 0.6;
 			display: flex;
-			align-items: center;
 			justify-content: center;
-			margin: 0;
+			align-items: center;
 			overflow: hidden;
+			scale: 0.6;
+			margin: 0;
+			background-color: $green-color;
 			box-shadow: 0px 2px 5px $footer-color;
 			border: 0;
 			border-radius: 0 70%;
-			background-color: $green-color;
 			transition: transform 0.2s;
 
 			&:nth-child(odd) {
-				margin-top: 15rem;
+				margin-top: 15em;
 			}
 
 			&-title {
-				font-size: 2.6rem;
-				padding-right: 2em;
 				margin-bottom: 0.6em;
+				padding-right: 2em;
+				font-size: 2.6rem;
 				font-weight: normal;
 			}
 
 			&-price {
+				margin-bottom: 0.5em;
 				font-size: 3.5rem;
 				font-weight: bold;
-				margin-bottom: 0.5em;
 			}
 
 			&-options {
-				list-style: none;
 				margin-bottom: 1em;
 				font-size: 1.5rem;
+				list-style: none;
 			}
 
 			&-option {
@@ -861,8 +864,8 @@ iframe {
 
 	.header {
 		height: 550px;
-
 		padding-left: 30em;
+
 		&__brand {
 			font-size: 2.4rem;
 		}
@@ -901,8 +904,6 @@ iframe {
 			font-size: 4rem;
 		}
 	}
-
-	//OFFERSSITE
 
 	//CAROUSEL-nav
 
