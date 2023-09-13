@@ -26,19 +26,30 @@ body {
 }
 
 .subpageTitle {
-	padding-top: 2em;
+	padding: 3.5em 0 2em;
 }
 
 //MOBILE NAV
 
 .mobileNav {
 	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.8em 10%;
+	width: 100%;
+	background-color: $secondary-color;
 	z-index: 10;
 
+	&__brand {
+		padding-left: 0.5em;
+		font-size: 2.8rem;
+		text-decoration: none;
+		color: $main-color;
+	}
+
 	&__button {
-		position: fixed;
-		right: 0;
-		padding: 0.5em 1em;
 		font-size: 3.6rem;
 		color: #fff;
 		border: none;
@@ -55,6 +66,7 @@ body {
 	&__items {
 		position: fixed;
 		left: -100%;
+		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -220,7 +232,7 @@ body {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		margin-bottom: 1.5em;
+		margin: 1.5em;
 		padding: 4em;
 		box-shadow: 0px 2px 5px $footer-color;
 		border: 1px solid $footerBackground-color;
@@ -341,6 +353,64 @@ body {
 		margin: 1.5em 0;
 		font-size: 1.5rem;
 		color: $footer-color;
+	}
+}
+
+// OFFERSSITE
+
+.offersSite {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 3em 10em;
+
+	&__offer {
+		margin-bottom: 4em;
+		box-shadow: 0px 2px 5px $footer-color;
+		background-color: $footerBackground-color;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&-info {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 2em 3em;
+			z-index: 10;
+
+			&-title {
+				font-size: 2.4rem;
+				margin-bottom: 0.6em;
+			}
+
+			&-description {
+				font-size: 1.4rem;
+				margin-bottom: 0.2em;
+			}
+
+			&-btn {
+				margin-top: 1em;
+				padding: 0.6em;
+				width: 100%;
+				font-size: 1.4rem;
+				color: $secondary-color;
+				background-color: $green-color;
+				border: none;
+				border-radius: 8px;
+				cursor: pointer;
+
+				&:hover {
+				}
+			}
+		}
 	}
 }
 
@@ -493,6 +563,43 @@ iframe {
 }
 
 // MEDIA
+
+@media (min-width: 576px) {
+	// OFFERSSITE
+
+	.offersSite {
+		&__offer {
+			display: flex;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+			}
+
+			&-info {
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
+
+				&-title {
+					font-size: 2.4rem;
+					margin-bottom: 0.5em;
+				}
+
+				&-description {
+					font-size: 1.4rem;
+					margin-bottom: 0.2em;
+				}
+
+				&-btn {
+					padding: 0.7em;
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.header {
 		&__brand {
@@ -501,14 +608,6 @@ iframe {
 
 		&__title {
 			font-size: 6rem;
-		}
-	}
-
-	.mobileNav {
-		&__item {
-			a {
-				font-size: 5rem;
-			}
 		}
 	}
 
@@ -540,10 +639,6 @@ iframe {
 			flex-direction: row;
 			flex-wrap: wrap;
 		}
-
-		&__card {
-			margin: 1.5em;
-		}
 	}
 
 	.footer {
@@ -571,28 +666,27 @@ iframe {
 	}
 
 	//404
-.error404 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: $footerBackground-color;
+	.error404 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: $footerBackground-color;
 
-	&__box {
+		&__box {
+			&-title {
+				font-size: 5rem;
+			}
 
-		&-title {
-			font-size: 5rem;
-		}
+			&-img {
+				width: 300px;
+			}
 
-		&-img {
-			width: 300px;
-		}
-
-		&-description {
-			font-size: 3rem;
+			&-description {
+				font-size: 3rem;
+			}
 		}
 	}
-}
 }
 
 @media (min-width: 992px) {
@@ -617,6 +711,12 @@ iframe {
 			background-color: $main-color;
 		}
 
+		&__brand {
+			font-size: 3rem;
+			text-decoration: none;
+			color: $main-color;
+		}
+
 		&__items {
 			display: flex;
 			padding: 0 2em;
@@ -633,15 +733,6 @@ iframe {
 			&:hover {
 				color: $secondary-color;
 				background-color: $main-color;
-			}
-		}
-
-		&__brand {
-			font-size: 3rem;
-			text-decoration: none;
-			color: $main-color;
-			i {
-				color: $footer-color;
 			}
 		}
 	}
@@ -735,8 +826,30 @@ iframe {
 		}
 	}
 
-	// CONTACT
+	.offersSite {
+		padding: 0 10em 10em;
+		&__offer {
+			max-width: 1000px;
 
+			&-img {
+				object-fit: cover;
+				height: 300px;
+			}
+
+			&-info {
+
+				&-title {
+					font-size: 2.8rem;
+				}
+
+				&-description {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+
+	// CONTACT
 	.contactForm {
 		font-size: 2rem;
 
@@ -761,172 +874,31 @@ iframe {
 			}
 		}
 	}
-
-	//OFFERSSITE
-
-	//CAROUSEL-nav
-	.carousel-nav {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('../img/offersiteBackground.jpg');
-		background-size: cover;
-		background-position: center;
-	}
-	.carousel-btn {
-		font-size: 5rem;
-		color: $green-color;
-		cursor: pointer;
-
-		&:hover {
-			color: $greenHover-color;
-		}
-	}
-	.prev {
-		margin-left: 1.5em;
-	}
-	.next {
-		margin-right: 1.5em;
-	}
-
-	.offersSite {
-		display: block;
-		margin: 0 auto;
-		width: 80%;
-
-		.offers__card {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			overflow: hidden;
-			scale: 0.6;
-			margin: 0;
-			background-color: $green-color;
-			box-shadow: 0px 2px 5px $footer-color;
-			border: 0;
-			border-radius: 0 70%;
-			transition: transform 0.2s;
-
-			&:nth-child(odd) {
-				margin-top: 15em;
-			}
-
-			&-title {
-				margin-bottom: 0.6em;
-				padding-right: 2em;
-				font-size: 2.6rem;
-				font-weight: normal;
-			}
-
-			&-price {
-				margin-bottom: 0.5em;
-				font-size: 3.5rem;
-				font-weight: bold;
-			}
-
-			&-options {
-				margin-bottom: 1em;
-				font-size: 1.5rem;
-				list-style: none;
-			}
-
-			&-option {
-				margin-bottom: 0.2em;
-			}
-
-			.ti-menu-2 {
-				font-size: 1rem;
-			}
-
-			.ti-check {
-				color: $darkgreen-color;
-			}
-
-			&-button {
-				padding: 0.5em 2em;
-				background-color: transparent;
-				box-shadow: 0px 2px 5px black;
-
-				&:hover {
-					opacity: 0.8;
-				}
-			}
-		}
-
-		.offers__card:hover {
-			cursor: pointer;
-			transform: scale(1.3);
-		}
-
-		.highlighted-card {
-			background-color: $highlighted-leaf;
-
-			.offers__card-button:hover {
-				background-color: $highlighted-leaf;
-			}
-		}
-	}
 }
 
 @media (min-width: 1200px) {
-	//OFFERSSITE
+	//404
+	.error404 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: $footerBackground-color;
 
-	//CAROUSEL-nav
-
-	.offersSite {
-		margin-bottom: 1em;
-		.offers__card {
+		&__box {
 			&-title {
+				font-size: 5rem;
+			}
+
+			&-img {
+				width: 350px;
+			}
+
+			&-description {
 				font-size: 3rem;
 			}
-
-			&-price {
-				font-size: 3.8rem;
-			}
-
-			&-options {
-				margin-left: 1em;
-				font-size: 2rem;
-			}
-
-			&-option {
-				margin-bottom: 0.3em;
-			}
-
-			.ti-menu-2 {
-				font-size: 2rem;
-			}
-
-			&-button {
-				margin-left: 2em;
-				font-size: 2rem;
-			}
 		}
 	}
-
-		//404
-.error404 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: $footerBackground-color;
-
-	&__box {
-
-		&-title {
-			font-size: 5rem;
-		}
-
-		&-img {
-			width: 350px;
-		}
-
-		&-description {
-			font-size: 3rem;
-		}
-	}
-}
 }
 
 @media (min-width: 1400px) {
@@ -980,32 +952,6 @@ iframe {
 
 		&__text {
 			font-size: 4rem;
-		}
-	}
-
-	//CAROUSEL-nav
-
-	.carousel-btn {
-		font-size: 5rem;
-		color: #7cc44c;
-		cursor: pointer;
-
-		&:hover {
-			color: #66a13f;
-		}
-	}
-
-	.offersSite {
-		width: 82%;
-
-		.offers__card {
-			&-title {
-				font-size: 3.2rem;
-			}
-
-			&-price {
-				font-size: 4rem;
-			}
 		}
 	}
 }
