@@ -3,9 +3,17 @@ const mail = document.querySelector('.mail')
 const message = document.querySelector('.message')
 const submitBtn = document.querySelector('.contactForm-btn')
 const popup = document.querySelector('.contactForm__popup')
+const popupInput = popup.querySelector('p')
 const closePopupBtn = document.querySelector('.close-popup-btn')
 const shadow = document.querySelector('.popup-shadow')
 
+const SERVICE_ID = 'service_l858f2f'
+const TEMPLATE_ID = 'template_t90nc2j'
+
+emailjs.init("_dqu9XrzksE67Bx0z");
+
+
+//CHECK FORM
 const showError = (input, msg) => {
 	const formBox = input.parentElement
 	const errorMsg = formBox.querySelector('.errorMsg')
@@ -63,6 +71,8 @@ const checkErrors = input => {
 	if (errorCount === 0) {
 		popup.classList.add('show-popup')
 		shadow.classList.add('show-shadow')
+		popupMsg('Wysyłanie...')
+		sendMail()
 	}
 }
 
@@ -72,10 +82,33 @@ const clearForm = input => {
 	})
 }
 
+const popupMsg = input => {
+	popupInput.textContent = input
+}
+
 const closePopup = () => {
 	popup.classList.remove('show-popup')
 	shadow.classList.remove('show-shadow')
-	clearForm([username, mail, message])
+	if (popupInput.textContent === 'Poprawnie wysłano wiadomość!') {
+		clearForm([username, mail, message])
+	}
+}
+
+const sendMail = () => {
+	let params = {
+		name: username.value,
+		email: mail.value,
+		message: message.value,
+	}
+
+	emailjs
+		.send(SERVICE_ID, TEMPLATE_ID, params)
+		.then(() => {
+			popupMsg('Poprawnie wysłano wiadomość!')
+		})
+		.catch(() => {
+			popupMsg('Nie udało się wysłać wiadomości, spróbuj za chwilę.')
+		})
 }
 
 submitBtn.addEventListener('click', e => {

@@ -380,11 +380,13 @@ body {
 		}
 
 		&-info {
+			position: relative;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			padding: 2em 3em;
-			z-index: 10;
+			background-color: $footerBackground-color;
+			z-index: 5;
 
 			&-title {
 				font-size: 2.4rem;
@@ -405,9 +407,11 @@ body {
 				background-color: $green-color;
 				border: none;
 				border-radius: 8px;
+				transition: background-color 0.3s;
 				cursor: pointer;
 
 				&:hover {
+					background-color: $greenHover-color;
 				}
 			}
 		}
@@ -571,6 +575,7 @@ iframe {
 		&__offer {
 			display: flex;
 			width: 100%;
+			
 
 			&-img {
 				width: 50%;
@@ -578,9 +583,7 @@ iframe {
 			}
 
 			&-info {
-				display: flex;
 				justify-content: space-between;
-				flex-direction: column;
 
 				&-title {
 					font-size: 2.4rem;
@@ -837,7 +840,6 @@ iframe {
 			}
 
 			&-info {
-
 				&-title {
 					font-size: 2.8rem;
 				}
