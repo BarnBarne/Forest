@@ -10,8 +10,7 @@ const shadow = document.querySelector('.popup-shadow')
 const SERVICE_ID = 'service_l858f2f'
 const TEMPLATE_ID = 'template_t90nc2j'
 
-emailjs.init("_dqu9XrzksE67Bx0z");
-
+emailjs.init('_dqu9XrzksE67Bx0z')
 
 //CHECK FORM
 const showError = (input, msg) => {
@@ -52,13 +51,19 @@ const checkMail = mail => {
 	}
 }
 
-const checkInput = input => {
-	const re = /^(?![_. '])(?!.*[_. ']{2})[a-zA-Z0-9/sąćężźłóń']+(?<![_. '])$/
-	if (re.test(input.value)) {
+const checkName = input => {
+	const re = /^(?![_.])(?!.*[_.]{2})[a-zA-Z0-9/sąćężźłóń\s]+(?<![_])$/
+	if (re.test(input.value) && input.value === input.value.trim()) {
 		clearError(input)
 	} else {
 		showError(input, `Niepoprawna ${input.previousElementSibling.innerText.slice(0, -1)}`)
 	}
+}
+
+const checkMsg = input => {
+	input.value === input.value.trim()
+		? clearError(input)
+		: showError(input, `Niepoprawna ${input.previousElementSibling.innerText.slice(0, -1)}`)
 }
 
 const checkErrors = input => {
@@ -118,8 +123,8 @@ submitBtn.addEventListener('click', e => {
 
 	checkForm(formInputs)
 	checkMail(mail)
-	checkInput(username)
-	checkInput(message)
+	checkName(username)
+	checkMsg(message)
 	checkLength(username, 3)
 	checkLength(message, 10)
 	checkErrors(formInputs)
