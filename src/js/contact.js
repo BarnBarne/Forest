@@ -116,31 +116,6 @@ const sendMail = () => {
 		})
 }
 
-	// let params = {
-	// 			name: username.value,
-	// 			email: mail.value,
-	// 			message: message.value,
-	// 		}
-	// ,{(
-	// 	method: 'POST',
-	//         service_id: SERVICE_ID,
-	//         template_id: TEMPLATE_ID,
-	//         userId: _dqu9XrzksE67Bx0z,
-	// 		template_params: {
-	// 			username: 'James',
-	// 			email: mail.value,
-	// 			message: message.value,
-	// 		}
-	// })
-	// .then((res) => res.json())
-	//         .then((data) => {
-	//             console.log(data);
-	//         })
-	//         .catch((error)=> {
-	//             console.log(error);
-	//         });
-
-
 submitBtn.addEventListener('click', e => {
 	e.preventDefault()
 
