@@ -32,7 +32,7 @@ const observer = new IntersectionObserver(
 	entries => {
 		entries.forEach(entry => {
 			const id = entry.target.id
-			const navItem = document.body.querySelector(`.nav__item[href='index.html#${id}']`)
+			const navItem = document.body.querySelector(`.nav__item[href='/Forest/#${id}']`)
 			navItem.classList.toggle('active', entry.isIntersecting)
 		})
 	},
