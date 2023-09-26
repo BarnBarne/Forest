@@ -26,7 +26,7 @@ body {
 }
 
 .subpageTitle {
-	padding: 3.5em 0 2em;
+	padding: 3.5em 0 3em;
 }
 
 //MOBILE NAV
@@ -277,7 +277,7 @@ body {
 			font-family: 'Raleway', sans-serif;
 			font-weight: 700;
 			background-color: $secondary-color;
-			color: $greyedOut-color;
+			color: $greyedOutBtn-color;
 			box-shadow: 0px 2px 5px $footer-color;
 			border: none;
 			border-radius: 5px;
@@ -430,9 +430,15 @@ body {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	margin: 0 auto;
-	padding: 0 2em 6em;
+	margin: 0 auto 3em;
+	padding: 0 2em;
 	font-size: 1.6rem;
+
+	&__fill {
+		display: flex;
+		flex-direction: column;
+	}
+
 	&__box {
 		display: flex;
 		flex-direction: column;
@@ -474,15 +480,56 @@ body {
 	}
 
 	&-btn {
+		position: relative;
 		padding: 1em 2em;
 		font-size: 1.4rem;
-		color: $secondary-color;
+		color: $main-color;
 		background-color: $green-color;
 		border: none;
 		border-radius: 8px;
+		cursor: pointer;
+		overflow: hidden;
+
+		&::after,
+		&::before {
+			display: block;
+			position: absolute;
+			content: '';
+			transition: all 0.5s;
+			z-index: 10;
+		}
+
+		&::before {
+			top: -30px;
+			left: -130px;
+			height: 200%;
+			width: 100px;
+			background-image: linear-gradient(-90deg, rgb(0, 0, 0, 0.3), rgba(39, 201, 106, 0));
+			transform: rotate(20deg);
+		}
+		&:hover::before {
+			left: 130%;
+		}
 
 		&:hover {
-			cursor: pointer;
+			background-color: $greenHover-color;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		h3 {
+			margin-top: 2em;
+			&:last-child {
+				margin-bottom: 2em;
+			}
+		}
+
+		i {
+			color: $green-color;
 		}
 	}
 
@@ -511,7 +558,7 @@ body {
 		}
 
 		&.show-popup {
-			top: 45%;
+			top: 25%;
 		}
 	}
 }
@@ -533,13 +580,31 @@ iframe {
 	width: 100%;
 	z-index: -1;
 }
+	.glass {
+		position: relative;
+		overflow: hidden;
+	}
 
-// CAROUSEL
-.next,
-.prev {
-	display: none;
-	font-size: 6rem;
-	color: $green-color;
+	.glass::after,
+	.glass::before {
+		display: block;
+		position: absolute;
+		content: '';
+		transition: all .5s;
+		z-index: 2;
+	}
+
+.glass::before {
+
+	top: -30px;
+	left: -130px;
+	height: 250%;
+	width: 100px;
+	background-image: linear-gradient(-90deg, rgb(0, 0, 0, .3), rgba(39, 201, 106,0));
+	transform: rotate(20deg);
+}
+.glass:hover::before {
+	left: 130%;
 }
 
 //404
@@ -581,7 +646,6 @@ iframe {
 		&__offer {
 			display: flex;
 			width: 100%;
-			
 
 			&-img {
 				width: 50%;
@@ -860,6 +924,18 @@ iframe {
 	// CONTACT
 	.contactForm {
 		font-size: 2rem;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 5em;
+
+		&__fill {
+			width: 50%;
+			padding: 4em 2em;
+			box-shadow: 0px 2px 5px $footer-color;
+			border-radius: 5%;
+			margin-right: 2em;
+		}
 
 		&-box {
 			input,
@@ -869,9 +945,19 @@ iframe {
 		}
 
 		&-btn {
-			align-self: flex-end;
-			width: 25%;
 			font-size: 1.8rem;
+		}
+
+		&__info {
+			width: 40%;
+
+			h3 {
+				margin-top: 2em;
+			}
+
+			i {
+				color: $green-color;
+			}
 		}
 
 		&__popup {

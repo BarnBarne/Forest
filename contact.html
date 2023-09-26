@@ -26,20 +26,20 @@
     </button>
 
     <ul class="mobileNav__items">
-        <li class="mobileNav__item"><a href="index">Home</a></li>
-        <li class="mobileNav__item"><a href="index#aboutus">O nas</a></li>
-        <li class="mobileNav__item"><a href="index#offers">Oferta</a></li>
+        <li class="mobileNav__item"><a href="/Forest">Home</a></li>
+        <li class="mobileNav__item"><a href="/Forest/#aboutus">O nas</a></li>
+        <li class="mobileNav__item"><a href="/Forest/#offers">Oferta</a></li>
         <li class="mobileNav__item"><a href="contact">Kontakt</a></li>
     </ul>
 </nav>
 
 <nav class="nav">
-    <a href="index#home" class="nav__brand">
+    <a href="/Forest/#home" class="nav__brand">
         <i class="ti ti-christmas-tree"></i>Forest</a>
     <div class="nav__items">
-        <a class="nav__item" href="index#home">Home</a>
-        <a class="nav__item" href="index#aboutus">O nas</a>
-        <a class="nav__item" href="index#offers">Oferta</a>
+        <a class="nav__item" href="/Forest/#home">Home</a>
+        <a class="nav__item" href="/Forest/#aboutus">O nas</a>
+        <a class="nav__item" href="/Forest/#offers">Oferta</a>
         <a class="nav__item" href="contact">Kontakt</a>
     </div>
 </nav>
@@ -49,31 +49,39 @@
 
 
     <form class="contactForm">
-        <div class="contactForm__box">
-            <label for="name">Nazwa użytkownika:</label>
-            <input type="text" id="name" placeholder="Podaj imię" autocomplete="name" class="name">
-            <p class="errorMsg">error</p>
-        </div>
-        <div class="contactForm__box">
-            <label for="mail">Adres e-mail:</label>
-            <input type="email" id="mail" placeholder="Podaj adres e-mail" class="mail">
-            <p class="errorMsg">error</p>
-        </div>
-        <div class="contactForm__box">
-            <label for="message">Wiadomość:</label>
-            <textarea type="text" id="message" placeholder="Podaj wiadomość" class="message"></textarea>
-            <p class="errorMsg">error</p>
-        </div>
-
-        <button type="submit" class="contactForm-btn">Wyślij</button>
-
-        <div class="contactForm__popup">
-            <p class="contactForm__popup-message">
-                Poprawnie wysłano wiadmość!</p>
-            <button class="contactForm-btn close-popup-btn">Zamknij</button>
+        <div class="contactForm__fill">
+            <div class="contactForm__box">
+                <label for="name">Nazwa użytkownika:</label>
+                <input type="text" id="name" placeholder="Podaj imię" autocomplete="name" class="name">
+                <p class="errorMsg">error</p>
+            </div>
+            <div class="contactForm__box">
+                <label for="mail">Adres e-mail:</label>
+                <input type="email" id="mail" placeholder="Podaj adres e-mail" class="mail">
+                <p class="errorMsg">error</p>
+            </div>
+            <div class="contactForm__box">
+                <label for="message">Wiadomość:</label>
+                <textarea type="text" id="message" placeholder="Podaj wiadomość" class="message"></textarea>
+                <p class="errorMsg">error</p>
+            </div>
+    
+            <button type="submit" class="glass contactForm-btn">Wyślij</button>
         </div>
 
+        
+        <div class="contactForm__info">
+            <h3 class="contactForm__info-phone"><i class="ti ti-phone"></i> +48 000 000 000</h3>
+            <h3 class="contactForm__info-mail"><i class="ti ti-mail"></i> Forestgroup@gmail.com</h3>
+            <h3 class="contactForm__info-localization"><i class="ti ti-map-pin"></i> Jasnogórska 2, 31-358 Kraków</h3>
+        </div>
     </form>
+
+    <div class="contactForm__popup">
+        <p class="contactForm__popup-message">
+            Poprawnie wysłano wiadmość!</p>
+        <button class="glass contactForm-btn close-popup-btn">Zamknij</button>
+    </div>
 
     <div class="popup-shadow">
     </div>
@@ -96,9 +104,9 @@
             <div class="footer__box">
                 <h3 class="footer__box-title">O nas</h3>
                 <ul class="footer__list">
-                    <li class="footer__item"><a href="index#aboutus">Historia</a></li>
-                    <li class="footer__item"><a href="index#aboutus">Parki</a></li>
-                    <li class="footer__item"><a href="index#aboutus">Opinie</a></li>
+                    <li class="footer__item"><a href="/Forest/#aboutus">Historia</a></li>
+                    <li class="footer__item"><a href="/Forest/#aboutus">Parki</a></li>
+                    <li class="footer__item"><a href="/Forest/#aboutus">Opinie</a></li>
                 </ul>
             </div>
             <div class="footer__box">

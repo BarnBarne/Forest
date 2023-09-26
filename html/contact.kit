@@ -19,31 +19,39 @@
 
 
     <form class="contactForm">
-        <div class="contactForm__box">
-            <label for="name">Nazwa użytkownika:</label>
-            <input type="text" id="name" placeholder="Podaj imię" autocomplete="name" class="name">
-            <p class="errorMsg">error</p>
-        </div>
-        <div class="contactForm__box">
-            <label for="mail">Adres e-mail:</label>
-            <input type="email" id="mail" placeholder="Podaj adres e-mail" class="mail">
-            <p class="errorMsg">error</p>
-        </div>
-        <div class="contactForm__box">
-            <label for="message">Wiadomość:</label>
-            <textarea type="text" id="message" placeholder="Podaj wiadomość" class="message"></textarea>
-            <p class="errorMsg">error</p>
-        </div>
-
-        <button type="submit" class="contactForm-btn">Wyślij</button>
-
-        <div class="contactForm__popup">
-            <p class="contactForm__popup-message">
-                Poprawnie wysłano wiadmość!</p>
-            <button class="contactForm-btn close-popup-btn">Zamknij</button>
+        <div class="contactForm__fill">
+            <div class="contactForm__box">
+                <label for="name">Nazwa użytkownika:</label>
+                <input type="text" id="name" placeholder="Podaj imię" autocomplete="name" class="name">
+                <p class="errorMsg">error</p>
+            </div>
+            <div class="contactForm__box">
+                <label for="mail">Adres e-mail:</label>
+                <input type="email" id="mail" placeholder="Podaj adres e-mail" class="mail">
+                <p class="errorMsg">error</p>
+            </div>
+            <div class="contactForm__box">
+                <label for="message">Wiadomość:</label>
+                <textarea type="text" id="message" placeholder="Podaj wiadomość" class="message"></textarea>
+                <p class="errorMsg">error</p>
+            </div>
+    
+            <button type="submit" class="glass contactForm-btn">Wyślij</button>
         </div>
 
+        
+        <div class="contactForm__info">
+            <h3 class="contactForm__info-phone"><i class="ti ti-phone"></i> +48 000 000 000</h3>
+            <h3 class="contactForm__info-mail"><i class="ti ti-mail"></i> Forestgroup@gmail.com</h3>
+            <h3 class="contactForm__info-localization"><i class="ti ti-map-pin"></i> Jasnogórska 2, 31-358 Kraków</h3>
+        </div>
     </form>
+
+    <div class="contactForm__popup">
+        <p class="contactForm__popup-message">
+            Poprawnie wysłano wiadmość!</p>
+        <button class="glass contactForm-btn close-popup-btn">Zamknij</button>
+    </div>
 
     <div class="popup-shadow">
     </div>
