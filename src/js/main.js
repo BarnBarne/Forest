@@ -22,10 +22,10 @@ burgerItem.forEach(item => {
 })
 
 //NAV
-if (url.includes('/contact.html')) {
-	document.querySelector(`.nav__item[href="contact.html"]`).classList.add('active')
-} else if (url.includes('/offers.html')) {
-	document.querySelector('.nav__item[href="index.html#offers"]').classList.add('active')
+if (url.includes('/contact')) {
+	document.querySelector(`.nav__item[href="contact"]`).classList.add('active')
+} else if (url.includes('/offers')) {
+	document.querySelector('.nav__item[href="/Forest/#offers"]').classList.add('active')
 }
 
 const observer = new IntersectionObserver(
