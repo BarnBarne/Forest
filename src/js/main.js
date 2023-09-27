@@ -4,6 +4,7 @@ const xIcon = document.querySelector('.ti-x')
 const mobileNav = document.querySelector('.mobileNav__items')
 const burgerItem = document.querySelectorAll('.mobileNav__item')
 const body = document.querySelector('body')
+const date = document.querySelector('.date')
 
 const sections = document.querySelectorAll('.sectionNav')
 const url = window.location.pathname
@@ -44,3 +45,7 @@ const observer = new IntersectionObserver(
 sections.forEach(section => {
 	observer.observe(section)
 })
+
+//DATE
+const currentDate = new Date()
+date.textContent = (currentDate.getFullYear())
