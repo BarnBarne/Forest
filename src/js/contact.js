@@ -74,8 +74,10 @@ const checkErrors = input => {
 		}
 	})
 	if (errorCount === 0) {
-		popup.classList.add('show-popup')
+
+		popup.style.top = `${scrollY + 200}px`
 		shadow.classList.add('show-shadow')
+		body.classList.toggle('scrollLock')
 		popupMsg('Wysyłanie...')
 		sendMail()
 	}
@@ -92,8 +94,9 @@ const popupMsg = input => {
 }
 
 const closePopup = () => {
-	popup.classList.remove('show-popup')
+	popup.removeAttribute('style')
 	shadow.classList.remove('show-shadow')
+	body.classList.toggle('scrollLock')
 	if (popupInput.textContent === 'Poprawnie wysłano wiadomość!') {
 		clearForm([username, mail, message])
 	}
